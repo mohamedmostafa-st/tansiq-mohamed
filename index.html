@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>تنسيق محمد — نسخة الموبايل</title>
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#0b7"/>
+  <link rel="stylesheet" href="styles.css" />
+  <!-- SheetJS from CDN (سيتم حفظه كاش عبر Service Worker بعد أول تشغيل) -->
+  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+</head>
+<body>
+  <header>
+    <h1>تنسيق محمد — نسخة الموبايل</h1>
+    <p>حوِّل أي ملف Excel إلى تنسيق محمد مباشرة على الموبايل (يعمل بدون سيرفر).</p>
+  </header>
+
+  <main>
+    <section class="card">
+      <label class="file">
+        <input type="file" id="fileInput" accept=".xlsx,.xls" />
+        <span>اختيار ملف إكسل…</span>
+      </label>
+
+      <div class="options">
+        <label><input type="checkbox" id="exportMessages" checked> تصدير رسائل "قيد تنفيذ"</label>
+      </div>
+
+      <div class="actions">
+        <button id="processBtn" disabled>تشغيل التنسيق</button>
+      </div>
+
+      <div id="status"></div>
+    </section>
+  </main>
+
+  <footer>
+    <small>بعد أول زيارة، اضغط "Add to Home Screen" لتثبيت التطبيق والعمل أوفلاين.</small>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('service-worker.js');
+      });
+    }
+  </script>
+</body>
+</html>
