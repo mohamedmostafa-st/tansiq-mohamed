@@ -1,0 +1,11 @@
+{
+  "name": "تنسيق محمد — موبايل",
+  "short_name": "تنسيق محمد",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0bb37f",
+  "lang": "ar",
+  "dir": "rtl",
+  "icons": []
+}
